@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{33A8CEF7-8CF9-4006-8D84-DEF6D594BABE}|Default">
+  <MonoDevelop.Ide.ItemProperties.apiTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="apiTest/wwwroot/index.html">
+    <Files>
+      <File FileName="apiTest/Controllers/ValuesController.cs" Line="50" Column="13" />
+      <File FileName="apiTest/wwwroot/api.js" Line="19" Column="8" />
+      <File FileName="apiTest/wwwroot/index.html" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/Controllers/ValuesController.cs" relfile="apiTest/Controllers/ValuesController.cs" line="20" column="1" />
+      <Breakpoint file="/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/Controllers/ValuesController.cs" relfile="apiTest/Controllers/ValuesController.cs" line="45" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
