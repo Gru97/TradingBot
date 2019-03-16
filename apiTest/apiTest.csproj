@@ -15,4 +15,17 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\main.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\main.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrameWork\FrameWork.csproj" />
+    <ProjectReference Include="..\Bussiness\Bussiness.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\Person.cs" />
+  </ItemGroup>
 </Project>

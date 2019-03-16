@@ -1,0 +1,12 @@
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.csprojAssemblyReference.cache
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.csproj.CoreCompileInputs.cache
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.AssemblyInfoInputs.cache
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.AssemblyInfo.cs
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/bin/Debug/netcoreapp2.2/Bussiness.deps.json
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/bin/Debug/netcoreapp2.2/Bussiness.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/bin/Debug/netcoreapp2.2/Bussiness.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/bin/Debug/netcoreapp2.2/FrameWork.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/bin/Debug/netcoreapp2.2/FrameWork.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.csproj.CopyComplete
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/obj/Debug/netcoreapp2.2/Bussiness.pdb

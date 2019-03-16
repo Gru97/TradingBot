@@ -24,6 +24,8 @@
     ".NETCoreApp,Version=v2.2": {
       "apiTest/1.0.0": {
         "dependencies": {
+          "Bussiness": "1.0.0",
+          "FrameWork": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -34,6 +36,25 @@
         },
         "compile": {
           "apiTest.dll": {}
+        }
+      },
+      "Bussiness/1.0.0": {
+        "dependencies": {
+          "FrameWork": "1.0.0"
+        },
+        "runtime": {
+          "Bussiness.dll": {}
+        },
+        "compile": {
+          "Bussiness.dll": {}
+        }
+      },
+      "FrameWork/1.0.0": {
+        "runtime": {
+          "FrameWork.dll": {}
+        },
+        "compile": {
+          "FrameWork.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3234,6 +3255,16 @@
   },
   "libraries": {
     "apiTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Bussiness/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrameWork/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

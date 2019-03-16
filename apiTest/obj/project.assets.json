@@ -4438,6 +4438,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Bussiness/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FrameWork": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Bussiness.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bussiness.dll": {}
+        }
+      },
+      "FrameWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/FrameWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrameWork.dll": {}
+        }
       }
     }
   },
@@ -12077,10 +12100,22 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Bussiness/1.0.0": {
+      "type": "project",
+      "path": "../Bussiness/Bussiness.csproj",
+      "msbuildProject": "../Bussiness/Bussiness.csproj"
+    },
+    "FrameWork/1.0.0": {
+      "type": "project",
+      "path": "../FrameWork/FrameWork.csproj",
+      "msbuildProject": "../FrameWork/FrameWork.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Bussiness >= 1.0.0",
+      "FrameWork >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -12114,7 +12149,14 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/Bussiness.csproj": {
+              "projectPath": "/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/Bussiness/Bussiness.csproj"
+            },
+            "/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/FrameWork.csproj": {
+              "projectPath": "/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/FrameWork.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

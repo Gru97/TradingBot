@@ -3,11 +3,17 @@
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/apiTest.runtimeconfig.dev.json
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/apiTest.dll
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/apiTest.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/Bussiness.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/FrameWork.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/FrameWork.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/bin/Debug/netcoreapp2.2/Bussiness.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.csprojAssemblyReference.cache
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.csproj.CoreCompileInputs.cache
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.RazorAssemblyInfo.cache
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.RazorAssemblyInfo.cs
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.AssemblyInfoInputs.cache
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.AssemblyInfo.cs
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.RazorTargetAssemblyInfo.cache
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.csproj.CopyComplete
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.dll
 /home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/obj/Debug/netcoreapp2.2/apiTest.pdb

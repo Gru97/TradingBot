@@ -1,15 +1,99 @@
 ﻿<html>
-    <head>
-        <script src="Jquery.min.js"></script>
-        <script src="api.js"></script>
-                               
-    </head>
-    <body>
-        <h3>Kelp Trading Bot<h3>
-        Hello!
-        <input type="text" id="txtValue">
-        <button id="btnGet">Get</button>
-        <button id="btnPost">Post</button>
 
-    </body>
+<head>
+    <title>
+        Kelp Trading Bot
+    </title>
+    <style>
+        #grad1 {
+            height: 100%;
+            background-image: linear-gradient(to bottom right, #758dd4, #ccffff);
+            /* Standard syntax (must be last) */
+            height: 100%;
+            margin: 5;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        #sansserif {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #516296;
+            text-align: center;
+        }
+        
+        input[type=text],
+        select {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type=number],
+        select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        #label {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+    <script src="Jquery.min.js"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body id="grad1">
+    <h1 id="sansserif">Welcome to Kelp Trading Bot</h1>
+  
+        <label id="label">Trading Secret:</label><br><input type="text" id="Trading_Secret"><br>
+        <label id="label">Source Secret:</label><br><input type="text" id="Source_Secret"><br>
+        <label id="label">Asset Code A:</label><br><input type="text" id="Asset_Code_A"><br>
+        <label id="label">Issuer A:</label><br><input type="text" id="Issuer_A"><br>
+        <label id="label">Asset Code B:</label><br><input type="text" id="Asset_Code_B"><br>
+        <label id="label">Issuer B:</label><br><input type="text" id="Issuer_B"><br>
+        <label id="label">Tick Interval Second:</label><br><input type="number" id="Tick_Interval_Second"><br>
+        <label id="label">Random Delay:</label><br><input type="number" id="Random_Delay"><br>
+        <label id="label">Data Feed A URL:</label><br><input type="text" id="Data_Feed_A_URL"><br>
+        <label id="label">Data Feed B URL:</label><br><input type="text" id="Data_Feed_B_URL"><br>
+        <label id="label">Price Tolerance:</label><br><input type="number" id="Price_Tolerance" step="0.01" min="0" max="1.00"><br>
+        <label id="label">Amount Tolerance:</label><br><input type="number" id="Amount_Tolerance" step="0.01" min="0" max="1.00"><br>
+        <br><button id="Create_Files">Create Files</button><br>
+        <br><button id="Run_Kelp">Run Kelp</button><br>
+        <br><button id="Start_Trading">Start Trading</button><br>
+
+ 
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>

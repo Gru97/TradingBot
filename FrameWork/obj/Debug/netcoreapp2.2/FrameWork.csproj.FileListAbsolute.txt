@@ -1,0 +1,9 @@
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/bin/Debug/netcoreapp2.2/FrameWork.deps.json
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/bin/Debug/netcoreapp2.2/FrameWork.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/bin/Debug/netcoreapp2.2/FrameWork.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/obj/Debug/netcoreapp2.2/FrameWork.csproj.CoreCompileInputs.cache
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/obj/Debug/netcoreapp2.2/FrameWork.AssemblyInfoInputs.cache
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/obj/Debug/netcoreapp2.2/FrameWork.AssemblyInfo.cs
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/obj/Debug/netcoreapp2.2/FrameWork.dll
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/obj/Debug/netcoreapp2.2/FrameWork.pdb
+/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/FrameWork/obj/Debug/netcoreapp2.2/FrameWork.csprojAssemblyReference.cache
