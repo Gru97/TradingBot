@@ -45,20 +45,20 @@ To read/write files:
 
 
 
-//Day9  
-*add reference of FrameWork class library to my project  
+Day9  
+* add reference of FrameWork class library to my project  
 dotnet add app/app.csproj reference lib/lib.csproj  
 ref: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference  
 
 
 
-*linux multiple command  
+* linux multiple command  
 1.https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line  
 2.https://loune.net/2017/06/running-shell-bash-commands-in-net-core/  
 
 *custom routing in dot net  
 https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-2.2  
 
-*processes in dot net  
+* processes in dot net  
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=netcore-2.2  
 
