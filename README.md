@@ -56,7 +56,7 @@ ref: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference
 1.https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line  
 2.https://loune.net/2017/06/running-shell-bash-commands-in-net-core/  
 
-*custom routing in dot net  
+* custom routing in dot net  
 https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-2.2  
 
 * processes in dot net  
