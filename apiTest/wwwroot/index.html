@@ -1,99 +1,237 @@
-﻿<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>
-        Kelp Trading Bot
-    </title>
-    <style>
-        #grad1 {
-            height: 100%;
-            background-image: linear-gradient(to bottom right, #758dd4, #ccffff);
-            /* Standard syntax (must be last) */
-            height: 100%;
-            margin: 5;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        
-        #sansserif {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #516296;
-            text-align: center;
-        }
-        
-        input[type=text],
-        select {
-            font-family: Arial, Helvetica, sans-serif;
-            width: 50%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        input[type=number],
-        select {
-            width: 50%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        #label {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        div {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
-    </style>
-    <script src="Jquery.min.js"></script>
-    <script src="main.js"></script>
+    <title>Kuknos Trading Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="https://www.kuknos.org/wp-content/uploads/2018/12/ForToml.png"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+
 
 </head>
+<body>
+    
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('https://www.kuknos.org/wp-content/uploads/2019/03/img-01.jpg');">
+            <div class="wrap-login100 p-t-190 p-b-30">
+                
+                    <div class="login100-form-avatar">
+                        <img src="https://www.kuknos.org/wp-content/uploads/2019/03/kktb.png" alt="KTB">
+                    </div>
 
-<body id="grad1">
-    <h1 id="sansserif">Welcome to Kelp Trading Bot</h1>
-  
-        <label id="label">Trading Secret:</label><br><input type="text" id="Trading_Secret"><br>
-        <label id="label">Source Secret:</label><br><input type="text" id="Source_Secret"><br>
-        <label id="label">Asset Code A:</label><br><input type="text" id="Asset_Code_A"><br>
-        <label id="label">Issuer A:</label><br><input type="text" id="Issuer_A"><br>
-        <label id="label">Asset Code B:</label><br><input type="text" id="Asset_Code_B"><br>
-        <label id="label">Issuer B:</label><br><input type="text" id="Issuer_B"><br>
-        <label id="label">Tick Interval Second:</label><br><input type="number" id="Tick_Interval_Second"><br>
-        <label id="label">Random Delay:</label><br><input type="number" id="Random_Delay"><br>
-        <label id="label">Data Feed A URL:</label><br><input type="text" id="Data_Feed_A_URL"><br>
-        <label id="label">Data Feed B URL:</label><br><input type="text" id="Data_Feed_B_URL"><br>
-        <label id="label">Price Tolerance:</label><br><input type="number" id="Price_Tolerance" step="0.01" min="0" max="1.00"><br>
-        <label id="label">Amount Tolerance:</label><br><input type="number" id="Amount_Tolerance" step="0.01" min="0" max="1.00"><br>
-        <br><button id="Create_Files">Create Files</button><br>
-        <br><button id="Run_Kelp">Run Kelp</button><br>
-        <br><button id="Start_Trading">Start Trading</button><br>
+                    <span class="login100-form-title p-t-20 p-b-45">
+                        Kuknos Trading Bot
+                    </span>
+                    
+                    <div class="search_categories">
+                        <div class="select">
+                            <select name="search_categories" id="Horizen_Url" >
+                                <option value="https://horizon.kuknos.org:8000">Kuknos Test-net</option>
+                                <option value="https://hz.kuknos.org:7071">Kuknos Live-net</option>
+                            </select>
+                        </div>
+                    </div>
+<br><br><br>
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Trading Secret is required">
+                        <input class="input100" type="password" id="Trading_Secret" name="Trading Secret" placeholder="Trading Secret">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
+                        <input class="input100" type="password" id="Source_Secret" name="Source Secret" placeholder="Source Secret">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
 
- 
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Asset Code A is required">
+                        <input class="input100" type="text" id="Asset_Code_A" name="Asset Code A" placeholder="Asset Code A">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Issuer A is required">
+                        <input class="input100" type="text" id="Issuer_A" name="Issuer A" placeholder="Issuer A">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Asset Code B is required">
+                        <input class="input100" type="text" id="Asset_Code_B" name="Asset Code B" placeholder="Asset Code B">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Issuer B is required">
+                        <input class="input100" type="text" id="Issuer_B" name="Issuer B" placeholder="Issuer B">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Tick Interval Second is required">
+                        <input class="input100" type="number" id="Tick_Interval_Second" name="Tick Interval Second" placeholder="Tick Interval Second">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Random Delay is required">
+                        <input class="input100" type="number" id="Random_Delay" name="Random Delay" placeholder="Random Delay">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Data Feed A URL is required">
+                        <input class="input100" type="text" id="Data_Feed_A_URL" name="Data Feed A URL" placeholder="Data Feed A URL">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="search_categories">
+                        <div class="select">
+                            <select name="search_categories" id="Data_Type_A">
+                                <option value="default">Select the Data Type of Asset A</option>
+                                <option value="fixed">fixed</option>
+                                <option value="fixed">exchange</option>
+                                <option value="fixed">crypto</option>
+                                <option value="fixed">fiat</option>
+                            </select>
+                        </div>
+                    </div>
+<br><br><br>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Data Feed B URL is required">
+                        <input class="input100" type="text" id="Data_Feed_B_URL" name="Data Feed B URL" placeholder="Data Feed B URL">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="search_categories">
+                        <div class="select">
+                            <select name="search_categories" id="Data_Type_B">
+                                <option value="default">Select the Data Type of Asset B</option>
+                                <option value="fixed">fixed</option>
+                                <option value="fixed">exchange</option>
+                                <option value="fixed">crypto</option>
+                                <option value="fixed">fiat</option>
+                            </select>
+                        </div>
+                    </div>
+<br><br><br>
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Price Tolerance is required">
+                        <input class="input100" type="number" step="0.01" min="0" max="1.00" id="Price_Tolerance" placeholder="Price Tolerance">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Amount Tolerance required">
+                        <input class="input100" type="number" step="0.01" min="0" max="1.00" id="Amount_Tolerance" name="Amount Tolerance" placeholder="Amount Tolerance">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input m-b-10" data-validate = "Amount of A Base is required">
+                        <input class="input100" type="text" id="Amount_Of_A_Base" name="Amount of A Base is required" placeholder="Amount of A Base is required">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+<br><br><br>
+                    <p style="color: white"><b>Add levels for your trading strategy:</b></p>
+                    <div class="row level">
+                        <div>
+                            <div class="column">
+                                <input class="input100" type="number" id="Spread1" name="Spread" placeholder="Spread">
+                                <span class="focus-input100"></span>
+                                </div>
+                                
+                                <div class="column">
+                                <input class="input100" type="number" id="Amount1" name="Amount" placeholder="Amount">
+                                <span class="focus-input100"></span>
+                                </div>
+                        </div>
+                    </div>
+                        
+                        <div class="add_level">
+                            <br>
+                        <img src="images/addlevelbutton.jpg" id="btnAddLevel" alt="Smiley face" height="25" width="25">
+                    </div>
+                    
+                    <div class="container-login100-form-btn p-t-10">
+                        <button class="login100-form-btn" id="btnCreateFile">
+                            CreateFile
+                        </button>
+                    </div>
+                    <div class="container-login100-form-btn p-t-10">
+                        <button class="login100-form-btn" id="btnStartTrading">
+                            Start Trading
+                        </button>
+                    </div>
+                        <div class="container-login100-form-btn p-t-10">
+                        <button class="login100-form-btn" id="btnTest">
+                            btnTest
+                        </button>
+                    </div>
+              
+            </div>
+        </div>
+    </div>
+    
+    
+
+    
+<!--===============================================================================================-->  
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+    
+    <script src="js/api.js"></script>
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>

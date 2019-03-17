@@ -62,3 +62,16 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 *processes in dot net  
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=netcore-2.2  
 
+
+//Day 10  
+* Installing docker with it's official document won't work, so I followed the hints in terminal and it seems ok.  
+I used this link to get over "permission denied" for exec docker commands:  
+https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/  
+
+
+* working with jquery  
+https://stackoverflow.com/questions/1828924/array-inside-a-javascript-object  
+https://stackoverflow.com/questions/41877007/creating-a-list-of-objects-inside-a-javascript-object/41877508
+
+
+

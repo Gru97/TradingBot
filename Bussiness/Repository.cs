@@ -7,7 +7,9 @@ namespace Bussiness
     {
 
         //@/home/lenovo/Downlaods/kelp
-        readonly string CurrentDirectory = @"/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/";
+        //@/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/
+        //@/home/lenovo/Documents/kelp/bin
+        readonly string CurrentDirectory = @"/home/lenovo/Documents/kelp/bin/";
      
 
         public bool CreateTraderConfig(Config config)
@@ -20,26 +22,38 @@ namespace Bussiness
             TraderString += string.Format("ISSUER_A='{0}'\n", config.Issuer_A);
             TraderString += string.Format("ASSET_CODE_B='{0}'\n", config.Asset_Code_B);
             TraderString += string.Format("ISSUER_B='{0}'\n", config.Issuer_B);
-            TraderString += string.Format("TICK_INTERVAL_SECONDS='{0}'\n", config.Tick_Interval_Second);
-            TraderString += string.Format("MAX_TICK_DELAY_MILLIS='{0}'\n", config.Random_Delay);
-
+            TraderString += string.Format("TICK_INTERVAL_SECONDS={0}\n", config.Tick_Interval_Second);
+            TraderString += string.Format("MAX_TICK_DELAY_MILLIS={0}\n", config.Random_Delay);
+            TraderString += string.Format("HORIZON_URL='{0}'", config.HORIZON_URL);
             //create trader.cfg
             //Write to file
-            return Utility.WriteToFile("Trader.cfg", CurrentDirectory, TraderString);
+            return Utility.WriteToFile("sample_trader.cfg", CurrentDirectory, TraderString);
         }
         public bool CreateStategyConfig(Config config)
         {
             //create sell.cfg
             //Write to file
             string SellString = "";
+            SellString += string.Format("DATA_TYPE_A='{0}'\n", config.DATA_TYPE_A);
+            SellString += string.Format("DATA_TYPE_B='{0}'\n", config.DATA_TYPE_B);
+
             SellString += string.Format("DATA_FEED_A_URL='{0}'\n", config.Data_Feed_A_URL);
             SellString += string.Format("DATA_FEED_B_URL='{0}'\n", config.Data_Feed_B_URL);
-            SellString += string.Format("AMOUNT_TOLERANCE='{0}'\n", config.Amount_Tolerance);
-            SellString += string.Format("PRICE_TOLERANCE='{0}'\n", config.Price_Tolerance);
+            SellString += string.Format("AMOUNT_TOLERANCE={0}\n", config.Amount_Tolerance);
+            SellString += string.Format("PRICE_TOLERANCE={0}\n", config.Price_Tolerance);
+            SellString += string.Format("AMOUNT_OF_A_BASE={0}\n", config.AMOUNT_OF_A_BASE);
 
-            return Utility.WriteToFile("Sell.cfg", CurrentDirectory, SellString);
+            foreach(var level in config.Levels)
+            {
+                SellString += "# " +level.Number +" level\n";
+                SellString += "[[LEVELS]]\n";
+                SellString += string.Format("SPREAD={0}\n", level.Spread);
+                SellString += string.Format("AMOUNT={0}\n", level.Amount);
+
+            }
+            return Utility.WriteToFile("sample_buysell.cfg", CurrentDirectory, SellString);
         }
-        public string RunCommand(string command)
+        public  string RunCommand(string command)
         {
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
             string result = "";
@@ -56,7 +70,7 @@ namespace Bussiness
             result += proc.StandardError.ReadToEnd();
 
             proc.WaitForExit();
-
+            int id= proc.Id;
             return result;
         }
     }
