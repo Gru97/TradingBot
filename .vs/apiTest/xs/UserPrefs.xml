@@ -4,7 +4,7 @@
     <Files>
       <File FileName="apiTest/Controllers/ValuesController.cs" Line="48" Column="54" />
       <File FileName="Bussiness/Repository.cs" Line="48" Column="53" />
-      <File FileName="apiTest/wwwroot/js/api.js" Line="30" Column="14" />
+      <File FileName="apiTest/wwwroot/js/api.js" Line="107" Column="89" />
       <File FileName="FrameWork/Utility.cs" Line="6" Column="39" />
       <File FileName="apiTest/wwwroot/index.html" Line="186" Column="82" />
       <File FileName="Bussiness/Config.cs" Line="24" Column="30" />

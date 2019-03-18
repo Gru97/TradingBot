@@ -45,33 +45,21 @@ To read/write files:
 
 
 
-//Day9  
-*add reference of FrameWork class library to my project  
+Day9  
+* add reference of FrameWork class library to my project  
 dotnet add app/app.csproj reference lib/lib.csproj  
 ref: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference  
 
 
 
-*linux multiple command  
+* linux multiple command  
 1.https://stackoverflow.com/questions/13077241/execute-combine-multiple-linux-commands-in-one-line  
 2.https://loune.net/2017/06/running-shell-bash-commands-in-net-core/  
 
-*custom routing in dot net  
+* custom routing in dot net  
 https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-2.2  
 
-*processes in dot net  
+* processes in dot net  
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=netcore-2.2  
-
-
-//Day 10  
-* Installing docker with it's official document won't work, so I followed the hints in terminal and it seems ok.  
-I used this link to get over "permission denied" for exec docker commands:  
-https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/  
-
-
-* working with jquery  
-https://stackoverflow.com/questions/1828924/array-inside-a-javascript-object  
-https://stackoverflow.com/questions/41877007/creating-a-list-of-objects-inside-a-javascript-object/41877508
-
 
 
