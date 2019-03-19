@@ -3,6 +3,8 @@ Steps:
 * Install .Net Core pre-requisits  
 * Install Mono runtime envirenment  
 * Install Mono development (Documentation not working on it's own)  
+* mono complete installation  
+https://www.mono-project.com/download/stable/#download-lin  
 
 Useful Links:  
 1.https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.2  
@@ -62,4 +64,19 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 * processes in dot net  
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=netcore-2.2  
 
+Day 10  
+* Installing docker with it's official document won't work, so I followed the hints in terminal and it seems ok.  
+I used this link to get over "permission denied" for exec docker commands:  
+https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/  
+
+
+* working with jquery  
+https://stackoverflow.com/questions/1828924/array-inside-a-javascript-object  
+
+
+Day 11  
+I have written a simple program via .Net Core that runs on Ubuntu. Using System.Diagnostics.Process, I run a command in terminal and I want to get the results (normally shown in terminal) as a string. But this command is an ever running command(unless forceably stopped). Is there a way to return partial results while the command is still running?  
+Answer:  
+https://stackoverflow.com/questions/4291912/process-start-how-to-get-the-output (not working because we are talking about web api)  
+https://forums.asp.net/t/2136629.aspx?Event+listener+in+Web+API  
 

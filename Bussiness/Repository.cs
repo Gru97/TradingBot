@@ -10,8 +10,8 @@ namespace Bussiness
         //@/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/
         //@/home/lenovo/Documents/kelp/bin
         readonly string CurrentDirectory = @"/home/lenovo/Documents/kelp/bin/";
-     
 
+        public EventHandler<string> Updated;
         public bool CreateTraderConfig(Config config)
         {
             string TraderString = "";
@@ -53,7 +53,7 @@ namespace Bussiness
             }
             return Utility.WriteToFile("sample_buysell.cfg", CurrentDirectory, SellString);
         }
-        public  string RunCommand(string command)
+        public string RunCommand(string command)
         {
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
             string result = "";
@@ -70,8 +70,11 @@ namespace Bussiness
             result += proc.StandardError.ReadToEnd();
 
             proc.WaitForExit();
-            int id= proc.Id;
+            int id = proc.Id;
             return result;
         }
+
+
+
     }
 }

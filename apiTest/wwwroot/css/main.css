@@ -534,7 +534,7 @@ iframe {
   line-height: 1.2;
   color: #333333;
   display: block;
-  width: 80% left;
+  width: 100%;
   background: #fff;
   height: 50px;
   opacity: 1;
@@ -545,7 +545,7 @@ iframe {
 
 .search_categories .select{
   width: 100%;
- 
+  background:url('arrow.png') no-repeat;
   background-position: center;
 }
 
@@ -559,4 +559,24 @@ iframe {
   position: relative;
   z-index: 10;
   font-size: 1em;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 45%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.add_level {
+  float: left;
+  width: 10%;
+  padding: 10px;
 }

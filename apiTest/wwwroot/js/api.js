@@ -16,19 +16,60 @@ $(document).ready(function() {
                 
             
             });
-        $('#btnTest').click(function(){
-            alert("btnTest");
-            debugger;
-            for(var i=1;i<=counter;i++)
+        $('#btnTest').click(function()
+        {
+            alert();
+            var publicKey="GB5U4OGJKU4F5BG6IBA4CF4P4D5K5UASWDP6K4WWXGHBEBUWTXII7TSH";
+    
+            $.ajax({
+                type:"Get",
+                url:"https://horizon.kuknos.org:8000/accounts/"+publicKey+"/offers?limit=5&order=asc",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                 
+   
+            }).done(function(data)
             {
-                var id1="#Spread"+i;
-                var id2="#Amount"+i;
-                var level={number:i,spread:$(id1).val(), amount:$(id2).val()}
-                debugger;
-                lstLevels.push(level);
-             
-            }
-        });   
+                var offers=data["_embedded"]["records"];
+                var Asset_Code_A="PMN";
+                var Asset_Code_B="KELP";
+                var tableHeader="<tr><td>"+Asset_Code_A+"</td><td>"+Asset_Code_B+"</td><td>Price</td></tr>";
+                $('#offerstable').append(tableHeader);
+        
+                offers.forEach(element => {
+                    console.log(element);
+                    //console.log(element["amount"]);
+                    console.log(element["selling"]["asset_type"]);
+                    //console.log(element["buying"]["asset_type"]);
+                    //console.log(element["buying"]["asset_code"]);
+                    //console.log(element["buying"]["asset_issuer"]);
+            
+            
+                    //td1
+                    var buying_asset_code=element["buying"]["asset_code"];
+            
+                    var selling_asset_code=element["selling"]["asset_code"];
+            
+                    //filtering based on assets choosen
+                    if(element["buying"]["asset_type"]=="native")
+                        buying_asset_code="PMN";
+                    if(element["selling"]["asset_type"]=="native")
+                        selling_asset_code="PMN";
+
+                    if(buying_asset_code==Asset_Code_A && selling_asset_code==Asset_Code_B || buying_asset_code==Asset_Code_B && selling_asset_code==Asset_Code_A)
+                    {       
+                        var amout_selling_asset=element["amount"];        
+                        var price=element["price"];
+
+                        var html="<tr><td>"+amout_selling_asset+"</td><td>"+price+"</td><td>"+price*amout_selling_asset+"</td></tr>";
+                        $('#offerstable').append(html);
+                    }
+           
+                });
+                //console.log(data["_embedded"]["records"]);
+            }).fail(function(data){alert("fail"); console.log(data.responseText);});
+        });
+         
         $('#btnCreateFile').click(function(error, result) {
             
             for(var i=1;i<=counter;i++)
@@ -125,8 +166,7 @@ $(document).ready(function() {
                     alert("kelp failed to start ");    
                 })
               .fail(function(data){alert("fail");console.log(data.responseText);});
-        });
-        
+        });       
         
         $("#btnStartTrading").click(function(){
             alert("Start_Trading");
