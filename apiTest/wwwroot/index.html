@@ -56,6 +56,14 @@
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>
+                        <div class="wrap-input100 validate-input m-b-10" data-validate = "Trading Public is required">
+                        <input class="input100" type="password" id="Public_Key" name="Public Key" placeholder="Public Key">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                        
                     
                     <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
                         <input class="input100" type="password" id="Source_Secret" name="Source Secret" placeholder="Source Secret">
@@ -126,9 +134,9 @@
                             <select name="search_categories" id="Data_Type_A">
                                 <option value="default">Select the Data Type of Asset A</option>
                                 <option value="fixed">fixed</option>
-                                <option value="fixed">exchange</option>
-                                <option value="fixed">crypto</option>
-                                <option value="fixed">fiat</option>
+                                <option value="exchange">exchange</option>
+                                <option value="crypto">crypto</option>
+                                <option value="fiat">fiat</option>
                             </select>
                         </div>
                     </div>
@@ -147,9 +155,9 @@
                             <select name="search_categories" id="Data_Type_B">
                                 <option value="default">Select the Data Type of Asset B</option>
                                 <option value="fixed">fixed</option>
-                                <option value="fixed">exchange</option>
-                                <option value="fixed">crypto</option>
-                                <option value="fixed">fiat</option>
+                                <option value="exchange">exchange</option>
+                                <option value="crypto">crypto</option>
+                                <option value="fiat">fiat</option>
                             </select>
                         </div>
                     </div>
@@ -211,11 +219,17 @@
                         </button>
                     </div>
                         <div class="container-login100-form-btn p-t-10">
-                        <button class="login100-form-btn" id="btnTest">
+                        <button class="login100-form-btn" id="btnShowOffers">
                             Show Offers
                         </button>
                     </div>
-                    <table border="1px" id="offerstable">
+                        <div class="container-login100-form-btn p-t-10">
+                        <button class="login100-form-btn" id="btnStopBot">
+                           Stop Bot
+                        </button>
+                    </div>
+<br><br><br>
+                    <table id="offerstable" class="table">
                         
                         
                     </table>
@@ -237,7 +251,6 @@
 <!--===============================================================================================-->
     
     <script src="js/api.js"></script>
-    <script src="js/testAPI.js"></script>
 
 </body>
 </html>

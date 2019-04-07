@@ -6,11 +6,11 @@ namespace FrameWork
         public static bool WriteToFile(string FileName,string Path, string Content)
         {
             bool result = true;
-            if(!System.IO.File.Exists(Path))
+            if (!System.IO.File.Exists(Path))
             {
                 try
                 {
-                    using (System.IO.StreamWriter file=new System.IO.StreamWriter(System.IO.File.Create(Path+FileName)))
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(System.IO.File.Create(Path + FileName)))
                     {
                         file.WriteLine(Content);
                         result = true;
@@ -20,8 +20,10 @@ namespace FrameWork
                 {
                     result = false;
                 }
-               
+
             }
+            //else
+                //System.IO.File.AppendAllText(Path + FileName, Content);
             return result;
         }
         public static string ReadFromFile(string FileName ,string Path)

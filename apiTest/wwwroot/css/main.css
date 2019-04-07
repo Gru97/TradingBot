@@ -580,3 +580,10 @@ iframe {
   width: 10%;
   padding: 10px;
 }
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  color: aliceblue;
+  font-family: Yekan;
+}

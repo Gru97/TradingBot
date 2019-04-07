@@ -80,3 +80,15 @@ Answer:
 https://stackoverflow.com/questions/4291912/process-start-how-to-get-the-output (not working because we are talking about web api)  
 https://forums.asp.net/t/2136629.aspx?Event+listener+in+Web+API  
 
+Day 12:  
+
+1. Kill a process by it's id  
+-->https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.id?view=netframework-4.7.2  
+-->https://stackoverflow.com/questions/50896621/net-core-how-to-properly-kill-started-process  
+
+2. Using "top" command in bash to see the processes  
+--> https://www.howtogeek.com/107217/how-to-manage-processes-from-the-linux-terminal-10-commands-you-need-to-know/  
+
+3. Writing output of an always running command asynchronously to a file  
+-->no success  
+

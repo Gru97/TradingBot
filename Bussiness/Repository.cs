@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using FrameWork;
 namespace Bussiness
@@ -10,7 +11,7 @@ namespace Bussiness
         //@/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/
         //@/home/lenovo/Documents/kelp/bin
         readonly string CurrentDirectory = @"/home/lenovo/Documents/kelp/bin/";
-
+        public static int ProcessID;
         public EventHandler<string> Updated;
         public bool CreateTraderConfig(Config config)
         {
@@ -57,21 +58,58 @@ namespace Bussiness
         {
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
             string result = "";
-
+           
             proc.StartInfo.FileName = "/bin/bash";
+          
             proc.StartInfo.Arguments = "-c \" " + command + " \"";
+            //proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
+            //proc.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler);
 
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.RedirectStandardError = true;
             proc.Start();
+            ProcessID = proc.Id;
+            /*
+            while (!proc.StandardOutput.EndOfStream)
+            {
+                string line = proc.StandardOutput.ReadLine();
 
-            result += proc.StandardOutput.ReadToEnd();
-            result += proc.StandardError.ReadToEnd();
-
+                Utility.WriteToFile("output", CurrentDirectory,line);
+            }
+            */
+            //result += proc.StandardOutput.ReadToEnd();
+            //result += proc.StandardError.ReadToEnd();
+            //proc.BeginErrorReadLine();
+            //proc.BeginOutputReadLine();
             proc.WaitForExit();
-            int id = proc.Id;
+           
             return result;
+        }
+
+        private void OutputHandler(object sender, DataReceivedEventArgs e)
+        {
+            //Utility.WriteToFile("output", CurrentDirectory, e.Data);
+        }
+
+        public string StopBot()
+        {
+            string ProcessName = System.Diagnostics.Process.GetProcessById(ProcessID).ProcessName;
+            string result = "false";
+            if (ProcessName == "kelp")
+            { 
+                try
+                {
+                    System.Diagnostics.Process.GetProcessById(ProcessID).Kill();
+                    result = "true";
+                }
+                catch (Exception ex)
+                {
+                    //result += ex.Message;
+                }
+            }
+            return result+ProcessID.ToString()+ ProcessName;
+
         }
 
 

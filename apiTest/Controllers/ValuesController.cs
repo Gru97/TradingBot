@@ -22,12 +22,15 @@ namespace apiTest.Controllers
         public ActionResult<bool> Get()
         {
             //"cd ~/Downloads/kelp && ./kelp
+            /*
             string result = repo.RunCommand("cd ~/Documents/kelp/bin && ./kelp");
             if (result.Contains("  __ "))            
                 return true;         
             else
                 return false;  
-            //return result;      
+            //return result;
+            */
+            return null;
         }
               
         // POST api/values
@@ -62,7 +65,13 @@ namespace apiTest.Controllers
             return repo.RunCommand(command).Substring(0,100);
         }
 
+        [HttpGet]
+        [Route("StopBot")]
+        public ActionResult<string> StopTrading()
+        {
 
+            return repo.StopBot();
+        }
 
     }
 }
