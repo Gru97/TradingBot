@@ -1,0 +1,32 @@
+
+Kelp project manual
+
+First you need to install Dot Net Core pre-requisites, mainly  dotnet-sdk-2.2.
+This link contains the instructions: https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current
+https://www.ostechnix.com/how-to-install-microsoft-net-core-sdk-on-linux/
+
+Second, you need to setup a development environment to develop, test and run your dotnet core programs:
+1. Install Mono run-time environment
+2. Install Mono development (Documentation not enough on it's own) 
+A link to Mono complete installation:
+https://www.mono-project.com/download/stable/#download-lin
+Afterwards, you’re ready to start. There are linux commands  you can use to create a new project and run it and all, but the easiest way is to use Mono.
+This project is using a .net core web API project, you need to know how to work with “static files in .net core web api” and you need to setup your project to enable CORS. There are msdn tutorials for them on the Internet. Use startup.cs file to make changes to the project.
+The project is able to handle requests from client side, which are:
+1. Creating different configuration files
+2. Start trading based on user’s strategy
+3. Stop trading on user’s demand
+
+So, this project has 3 class libraries: 
+1.  API layer containing views and controllers (main project)
+2. Business Layer containing Models like configuration file models, and a repository class that has all necessary methods to work with models in order to handle user requests like creating different configuration files and running different shell commands.
+Note: For the sake of simplicity and the fact that it was a small project at that time, I merged Model with Business layer.
+3. Framework Layer containing cross-concerns, for this project I assume it would be things like creating, reading and writing files.
+
+To handle process in donnet Core, the goto library would be “System.Diagnostics.Process”
+To work woth files use standard libraries “System.IO.StreamWriter” and “System.IO.File”.
+
+
+
+
+
