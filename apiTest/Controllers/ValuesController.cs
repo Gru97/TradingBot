@@ -36,38 +36,53 @@ namespace apiTest.Controllers
         // POST api/values
         [HttpPost]
         [Route("CreateConfig")]
-        public string CreateConfig([FromBody]Config config)
+        public OperationResult CreateConfig([FromBody]Config config)
         {
-
-            bool result = false;
-            string res = "nothing. ";
-            if(config!=null)
+            OperationResult op = new OperationResult();
+          
+            if (config != null)
             {
-                res += "config not null. " ;
-                result= repo.CreateTraderConfig(config);
-                if (result)
+                if (repo.CreateTraderConfig(config))
                 {
-                    res += "true";
-                    result = repo.CreateStategyConfig(config);
-                    res += result.ToString();
+                    op.Message += "Trader config file created successfully.";
+                    if (repo.CreateStategyConfig(config))
+                    {
+                        op.Message += "Strategy config file created successfully.";
+                        op.Success = true;
+                    }
+                    else
+                    {
+                        op.Message += "Strategy config file failed to create.";
+                        op.Success = false;
+                    }                           
+                }
+                else
+                {
+                    op.Message += "Trader confiig file failed to create.";
+                    op.Success = false;
                 }
             }
-            return res;
+            else
+            { 
+                op.Message = "Config properties are empty.";
+                op.Success = false;
+            }
+            return op;
 
         }
 
         [HttpGet]
         [Route("Trade")]
-        public ActionResult<string> Trade()
+        public ActionResult<OperationResult> Trade()
         {
-
+         
             string command = "cd ~/Documents/kelp/bin && ./kelp trade --botConf ./sample_trader.cfg --strategy buysell --stratConf ./sample_buysell.cfg";
-            return repo.RunCommand(command).Substring(0,100);
+            return repo.RunCommand(command);
         }
 
         [HttpGet]
         [Route("StopBot")]
-        public ActionResult<string> StopTrading()
+        public ActionResult<OperationResult> StopTrading()
         {
 
             return repo.StopBot();

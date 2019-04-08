@@ -6,11 +6,9 @@ namespace Bussiness
 {
     public class Repository
     {
-
-        //@/home/lenovo/Downlaods/kelp
-        //@/home/lenovo/Documents/MyDotNetWorkPlace/apiTest/apiTest/
-        //@/home/lenovo/Documents/kelp/bin
+             
         readonly string CurrentDirectory = @"/home/lenovo/Documents/kelp/bin/";
+
         public static int ProcessID;
         public EventHandler<string> Updated;
         public bool CreateTraderConfig(Config config)
@@ -32,6 +30,7 @@ namespace Bussiness
         }
         public bool CreateStategyConfig(Config config)
         {
+            OperationResult op = new OperationResult();
             //create sell.cfg
             //Write to file
             string SellString = "";
@@ -54,37 +53,49 @@ namespace Bussiness
             }
             return Utility.WriteToFile("sample_buysell.cfg", CurrentDirectory, SellString);
         }
-        public string RunCommand(string command)
+        public OperationResult RunCommand(string command)
         {
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            string result = "";
-           
-            proc.StartInfo.FileName = "/bin/bash";
-          
-            proc.StartInfo.Arguments = "-c \" " + command + " \"";
-            //proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
-            //proc.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler);
+            OperationResult op = new OperationResult();
 
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.RedirectStandardError = true;
-            proc.Start();
-            ProcessID = proc.Id;
-            /*
-            while (!proc.StandardOutput.EndOfStream)
+            try
             {
-                string line = proc.StandardOutput.ReadLine();
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                string result = "";
 
-                Utility.WriteToFile("output", CurrentDirectory,line);
+                proc.StartInfo.FileName = "/bin/bash";
+
+                proc.StartInfo.Arguments = "-c \" " + command + " \"";
+                //proc.OutputDataReceived += new DataReceivedEventHandler(OutputHandler);
+                //proc.ErrorDataReceived += new DataReceivedEventHandler(OutputHandler);
+
+                proc.StartInfo.UseShellExecute = false;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.RedirectStandardError = true;
+                proc.Start();
+                op.Message = "Process started. ";
+                ProcessID = proc.Id;
+                /*
+                while (!proc.StandardOutput.EndOfStream)
+                {
+                    string line = proc.StandardOutput.ReadLine();
+
+                    Utility.WriteToFile("output", CurrentDirectory,line);
+                }
+                */
+                result += proc.StandardOutput.ReadToEnd();
+                result += proc.StandardError.ReadToEnd();
+                //proc.BeginErrorReadLine();
+                //proc.BeginOutputReadLine();
+                proc.WaitForExit();
+                op.Success = true;
+                op.Message+= result;
             }
-            */
-            //result += proc.StandardOutput.ReadToEnd();
-            //result += proc.StandardError.ReadToEnd();
-            //proc.BeginErrorReadLine();
-            //proc.BeginOutputReadLine();
-            proc.WaitForExit();
+            catch (Exception ex)
+            {
+                op.Message = "Starting process failed. " + ex.Message;
+            }
            
-            return result;
+            return op;
         }
 
         private void OutputHandler(object sender, DataReceivedEventArgs e)
@@ -92,23 +103,39 @@ namespace Bussiness
             //Utility.WriteToFile("output", CurrentDirectory, e.Data);
         }
 
-        public string StopBot()
+        public OperationResult StopBot()
         {
-            string ProcessName = System.Diagnostics.Process.GetProcessById(ProcessID).ProcessName;
-            string result = "false";
-            if (ProcessName == "kelp")
-            { 
-                try
+            OperationResult op = new OperationResult();
+            try
+            {
+                string ProcessName = System.Diagnostics.Process.GetProcessById(ProcessID).ProcessName;
+
+                if (ProcessName == "kelp")
                 {
-                    System.Diagnostics.Process.GetProcessById(ProcessID).Kill();
-                    result = "true";
+                    try
+                    {
+                        System.Diagnostics.Process.GetProcessById(ProcessID).Kill();
+                        op.Success = true;
+                        op.Message = "Kelp Process Stopped Successfully";
+                    }
+                    catch (Exception ex)
+                    {
+                        op.Message = "Kelp Process Failed To Stop. " + ex.Message;
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    //result += ex.Message;
+                    op.Message = "No such process is running.";
+                    op.Success = false;
                 }
             }
-            return result+ProcessID.ToString()+ ProcessName;
+            catch (Exception ex)
+            {
+                op.Message += ex.Message;
+                op.Success = false;
+            }
+
+            return op;
 
         }
 

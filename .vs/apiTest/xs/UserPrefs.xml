@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{33A8CEF7-8CF9-4006-8D84-DEF6D594BABE}|Default">
   <MonoDevelop.Ide.ItemProperties.apiTest PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="apiTest/wwwroot/js/api.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bussiness/Repository.cs">
     <Files>
-      <File FileName="apiTest/wwwroot/js/api.js" Line="157" Column="31" />
-      <File FileName="Bussiness/Repository.cs" Line="73" Column="15" />
-      <File FileName="FrameWork/Utility.cs" Line="25" Column="15" />
-      <File FileName="apiTest/Controllers/ValuesController.cs" Line="24" Column="15" />
+      <File FileName="Bussiness/Repository.cs" Line="81" Column="21" />
+      <File FileName="apiTest/Controllers/ValuesController.cs" Line="90" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

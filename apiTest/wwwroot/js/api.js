@@ -8,17 +8,17 @@ $(document).ready(function()
     {
         
         var selectedUrl = $(this).children("option:selected").val();
-        alert("You have selected the Url - " + selectedUrl);
+        //alert("You have selected the Url - " + selectedUrl);
     });
    
     $("#Data_Type_A").change(function(){
         selected_Data_Type_A = $(this).children("option:selected").val();
-        alert("You have selected the Data_Type_A - " + selected_Data_Type_A);
+        //alert("You have selected the Data_Type_A - " + selected_Data_Type_A);
     });
     
     $("#Data_Type_B").change(function(){
         selected_Data_Type_B = $(this).children("option:selected").val();
-        alert("You have selected the Data_Type_A - " + selected_Data_Type_B);
+        //alert("You have selected the Data_Type_A - " + selected_Data_Type_B);
     });
     
     
@@ -26,7 +26,7 @@ $(document).ready(function()
         debugger;
         counter++;
         var html=' <div> <div class="column"> <input class="input100" type="number" id="Spread'+counter+'" name="Spread" placeholder="Spread"> <span class="focus-input100"></span> </div>'+
-        '<div class="column"> <input class="input100" type="number" id="Amount'+counter+'" name="Amount" placeholder="Amount"> <span class="focus-input100"></span></div> </div>';
+        '<div class="column"> <input class="input100" type="number" step="0.1" min="0" max="1.00" id="Amount'+counter+'" name="Amount" placeholder="Amount"> <span class="focus-input100"></span></div> </div>';
         $(".level").append(html);
         
     
@@ -34,10 +34,12 @@ $(document).ready(function()
     
     $('#btnShowOffers').click(function()
     {
-        alert("Show offers");
+        //alert("Show offers");
         $('#offerstable').empty();
-        var publicKey="GBRPDD7WJNXZKX6VHUSX3BIXXS65MCDZZ2ERMA5GQDUEDPE2RRGTGU4K";
-        //var publicKey=$("#Public_Key").val();
+        //var publicKey="GBRPDD7WJNXZKX6VHUSX3BIXXS65MCDZZ2ERMA5GQDUEDPE2RRGTGU4K";
+        var publicKey=$("#Public_Key").val();
+        if(publicKey==null)
+            alert("Enter your public key");
         
         $.ajax({
         type:"Get",
@@ -91,10 +93,10 @@ $(document).ready(function()
     });
     
     $("#Run_Kelp").click(function(){
-        alert("Run_Kelp");
+        //alert("Run_Kelp");
         $.ajax({
             type:"Get",
-            url:"https://localhost:5001/api/values",
+            url:"/api/values",
             contentType: "application/json; charset=utf-8",
             dataType: "json",                                 
         }).done(function(data){
@@ -104,36 +106,33 @@ $(document).ready(function()
         else
             alert("kelp failed to start ");    
         })
-      .fail(function(data){alert("fail");console.log(data.responseText);});
+      .fail(function(data){console.log(data.responseText);});
     });
            
     $("#btnStopBot").click(function(){
-        alert("StopBot");
+        //alert("StopBot");
         $.ajax({
             type:"Get",
-            url:"https://localhost:5001/api/values/StopBot",
+            url:"/api/values/StopBot",
             contentType: "application/json; charset=utf-8",
             dataType: "json",                                 
         }).done(function(data){
         console.log(data);
         })
-      .fail(function(data){alert("fail");console.log(data.responseText);});
+      .fail(function(data){console.log(data);});
     });
    
     $("#btnStartTrading").click(function(){
-        alert("Start_Trading");
+        //alert("Start_Trading");
         $.ajax({
             type:"Get",
-            url:"https://localhost:5001/api/values/Trade",
+            url:"/api/values/Trade",
             contentType: "application/json; charset=utf-8",
             dataType: "json",                                 
         }).done(function(data){
-            if(data==true) 
-                alert("Trade started successfully");
-            else
-                alert("Trade failed to start ");    
+                console.log(data);    
             })
-            .fail(function(data){alert("fail");console.log(data.responseText);});
+            .fail(function(data){alert("fail");console.log(data);});
        });
        
     $('#btnCreateFile').click(function(error, result) {
@@ -150,7 +149,7 @@ $(document).ready(function()
         //var level1={number:1,spread:$("#Spread1").val(), amount:$("#Amount1").val()}
         //var level2={number:2,spread:0.002, amount:2}
         //var lstLevels=[level1];
-        alert("btnCreateFile");
+        //alert("btnCreateFile");
         var config = {
             Trading_Secret: $('#Trading_Secret').val(),
             //Trading_Secret: "SA3EQID43UQLQDUBOAMUE5OE2IZGETA52TVILMHDLRP62ZACTW7OZRHH",
@@ -207,14 +206,14 @@ $(document).ready(function()
         console.log(lstLevels);
         $.ajax({
             type:"POST",
-            url:"https://localhost:5001/api/values/CreateConfig",
+            url:"/api/values/CreateConfig",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data:JSON.stringify(config)           
        
         }).done(function(data){
             console.log(data);
-            }).fail(function(data){alert("fail"); console.log(data.responseText);});
+            }).fail(function(data){ console.log(data.responseText);});
           
     
         
