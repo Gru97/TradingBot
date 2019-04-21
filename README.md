@@ -1,4 +1,4 @@
-This is a test to get the hang of .Net Core web api.  
+### This is a test to get the hang of .Net Core web api.  
 Steps:  
 * Install .Net Core pre-requisits  
 * Install Mono runtime envirenment  
@@ -18,7 +18,7 @@ Useful Links:
 
 
 
-Problems you will face:  
+#### Problems you will face:  
 * Cors problem (apart from official documents, use complete https://localhost when setting url for ajax requests)  
 Useful Links:  
 1.https://stackoverflow.com/questions/52204183/cant-enable-cors-in-asp-net-core-web-api  
@@ -47,7 +47,7 @@ To read/write files:
 
 
 
-Day9  
+#### Day9  
 * add reference of FrameWork class library to my project  
 dotnet add app/app.csproj reference lib/lib.csproj  
 ref: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-add-reference  
@@ -64,7 +64,7 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 * processes in dot net  
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process?view=netcore-2.2  
 
-Day 10  
+#### Day 10  
 * Installing docker with it's official document won't work, so I followed the hints in terminal and it seems ok.  
 I used this link to get over "permission denied" for exec docker commands:  
 https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/  
@@ -74,21 +74,21 @@ https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-tryin
 https://stackoverflow.com/questions/1828924/array-inside-a-javascript-object  
 
 
-Day 11  
+#### Day 11  
 I have written a simple program via .Net Core that runs on Ubuntu. Using System.Diagnostics.Process, I run a command in terminal and I want to get the results (normally shown in terminal) as a string. But this command is an ever running command(unless forceably stopped). Is there a way to return partial results while the command is still running?  
 Answer:  
 https://stackoverflow.com/questions/4291912/process-start-how-to-get-the-output (not working because we are talking about web api)  
 https://forums.asp.net/t/2136629.aspx?Event+listener+in+Web+API  
 
-Day 12:  
+#### Day 12:  
 
 1. Kill a process by it's id  
--->https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.id?view=netframework-4.7.2  
--->https://stackoverflow.com/questions/50896621/net-core-how-to-properly-kill-started-process  
+* https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.id?view=netframework-4.7.2  
+* https://stackoverflow.com/questions/50896621/net-core-how-to-properly-kill-started-process  
 
 2. Using "top" command in bash to see the processes  
---> https://www.howtogeek.com/107217/how-to-manage-processes-from-the-linux-terminal-10-commands-you-need-to-know/  
+* https://www.howtogeek.com/107217/how-to-manage-processes-from-the-linux-terminal-10-commands-you-need-to-know/  
 
 3. Writing output of an always running command asynchronously to a file  
--->no success  
+(no success)  
 
